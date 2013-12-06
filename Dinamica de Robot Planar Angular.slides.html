@@ -2555,7 +2555,8 @@ In&nbsp;[28]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Entonces ya podemos concluir que el torque de nuestro primer grado de libertad, estará dado por:</p>
 <p><span class="math">\[
-    \tau_1 =
+\begin{array}
+    x\tau_1 =&amp;
         \left\{
             m_1 \frac{l_1^2}{4}
             + I_1
@@ -2571,9 +2572,10 @@ In&nbsp;[28]:
                     l_1 l_2 \cos{q_2}
                     + \frac{l_2^2}{4}
                 \right]
-        \right\} \ddot{q_2}
-        + m_2 l_1 l_2 \sin{q_2} \dot{q_1} \dot{q_2}
+        \right\} \ddot{q_2} \\
+        &amp;+ m_2 l_1 l_2 \sin{q_2} \dot{q_1} \dot{q_2}
         + \frac{1}{2} m_2 l_1 l_2 \sin{q_2} \dot{q_2}^2
+\end{array}
 \]</span></p>
 </div><div class="fragment">
     
@@ -2780,23 +2782,21 @@ In&nbsp;[28]:
      \end{pmatrix}
 \]</span></p>
 <p><span class="math">\[
-    C =
+    C = \frac{1}{2} m_2 l_1 l_2 \sin{q_2}
+    \begin{pmatrix}
+        2 \dot{q_2} &amp; \dot{q_2} \\
+        \dot{q_2}^2 &amp; \dot{q_1}^2 + \dot{q_1}
+    \end{pmatrix}
+\]</span></p>
+<p><span class="math">\[
+    G = g
+    \begin{pmatrix}
+        0 \\
+        0
+    \end{pmatrix}
 \]</span></p>
 </div>
     </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre>
-</pre></div>
-
-</div>
-</div>
-
-</div>
 </div>
 </div>
 
