@@ -1752,16 +1752,18 @@ In&nbsp;[27]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Dinamica-de-Robot-Planar-Angular">Dinamica de Robot Planar Angular<a class="anchor-link" href="#Dinamica-de-Robot-Planar-Angular">&#182;</a></h1>
 </div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="(Modelo-Dinamico-de-Euler-Lagrange)">(Modelo Dinamico de Euler-Lagrange)<a class="anchor-link" href="#(Modelo-Dinamico-de-Euler-Lagrange)">&#182;</a></h2>
-</div>
 </section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="(Modelo-Dinamico-de-Euler-Lagrange)">(Modelo Dinamico de Euler-Lagrange)<a class="anchor-link" href="#(Modelo-Dinamico-de-Euler-Lagrange)">&#182;</a></h2>
+</div>
+<div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>El modelo dinamico de Euler Lagrange se basa en 2 formulas muy basicas:</p>
-</div></section><section>
+</div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><span class="math">\(L = K - U\)</span></p>
 <p>La funcion Lagrange nos dice que la energia del sistema va a ser la suma de las energias cineticas del sistema, menos la suma de las energias potenciales del sistema.</p>
@@ -2313,7 +2315,7 @@ ExFpAJM5EZEGMJkTEWnA/wOfMrDiyKdPqwAAAABJRU5ErkJggg==
 <p><span class="math">\(v_1^2 = \frac{l_1^2}{4} \dot{q_1}^2\)</span></p>
 <p><span class="math">\[
     v_2^2 =
-        \left[ l_1^2 + l_1 1_2 \cos{q_2} + \frac{l_2^2}{4} \right] \dot{q_1}^2
+        \left[ l_1^2 + l_1 l_2 \cos{q_2} + \frac{l_2^2}{4} \right] \dot{q_1}^2
         + \left[ l_1 l_2 + \frac{l_2^2}{4} \right] \dot{q_1} \dot{q_2}
         + \frac{l_2^2}{4} \dot{q_2}^2
 \]</span></p>
@@ -2337,7 +2339,7 @@ ExFpAJM5EZEGMJkTEWnA/wOfMrDiyKdPqwAAAABJRU5ErkJggg==
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>... y sustituyendo <span class="math">\(v_1\)</span> y <span class="math">\(\omega_1\)</span>:</p>
-<p><span class="math">\(K_1 = \frac{1}{8} m_1 l_1^2 + \frac{1}{2} I_1 \dot{q_1}^2\)</span></p>
+<p><span class="math">\(K_1 = \frac{1}{8} m_1 l_1^2 \dot{q_1}^2 + \frac{1}{2} I_1 \dot{q_1}^2\)</span></p>
 </div>
     </div><div class="fragment">
     
@@ -2350,7 +2352,7 @@ ExFpAJM5EZEGMJkTEWnA/wOfMrDiyKdPqwAAAABJRU5ErkJggg==
 <p><span class="math">\[
     K_2 =
         \frac{1}{2} m_2 \left\{
-            \left[ l_1^2 + l_1 1_2 \cos{q_2} + \frac{l_2^2}{4} \right] \dot{q_1}^2
+            \left[ l_1^2 + l_1 l_2 \cos{q_2} + \frac{l_2^2}{4} \right] \dot{q_1}^2
             + \left[ l_1 l_2 + \frac{l_2^2}{4} \right] \dot{q_1} \dot{q_2}
             + \frac{l_2^2}{4} \dot{q_2}^2
         \right\}
@@ -2408,7 +2410,79 @@ In&nbsp;[28]:
 </div>
 
 </div>
-    </div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="La-funcion-Lagrange">La funcion Lagrange<a class="anchor-link" href="#La-funcion-Lagrange">&#182;</a></h2>
+</div>
+</section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ahora estamos listos para armar nuestra funcion Lagrange.</p>
+<p><span class="math">\(L = K - U\)</span></p>
+</div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>... entonces sumamos las dos energias cineticas que teniamos y la energia potencial que encontramos ;)</p>
+<p><span class="math">\[
+    L =
+        \frac{1}{8} m_1 l_1^2 \dot{q_1}^2 + \frac{1}{2} I_1 \dot{q_1}^2
+        + \frac{1}{2} m_2 \left\{
+            \left[ l_1^2 + l_1 l_2 \cos{q_2} + \frac{l_2^2}{4} \right] \dot{q_1}^2
+            + \left[ l_1 l_2 + \frac{l_2^2}{4} \right] \dot{q_1} \dot{q_2}
+            + \frac{l_2^2}{4} \dot{q_2}^2
+        \right\}
+        + \frac{1}{2} I_2 \dot{q_2}^2
+\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>... y reorganizamos de tal manera que los terminos con <span class="math">\(\dot{q_1}^2\)</span> queden agrupados, los que tienen <span class="math">\(\dot{q_1} \dot{q_2}\)</span> igual y los que tienen <span class="math">\(\dot{q_2}^2\)</span> tambien.</p>
+<p><span class="math">\[
+    L =
+        \frac{1}{2} \left\{
+            m_1 \frac{l_1^2}{4}
+            + I_1
+            + m_2
+                \left[
+                    l_1^2 + l_1 l_2 \cos{q_2}
+                    + \frac{l_2^2}{4}
+                \right]
+        \right\} \dot{q_1}^2
+        + \frac{1}{2} \left\{
+            m_2
+                \left[
+                    l_1 l_2 \cos{q_2}
+                    + \frac{l_2^2}{4}
+                \right]
+        \right\} \dot{q_1} \dot{q_2}
+        + \frac{1}{2} \left\{
+            m_2 \frac{l_2^2}{4}
+            + I_2
+        \right\} \dot{q_2}^2
+\]</span></p>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Los-Torques">Los Torques<a class="anchor-link" href="#Los-Torques">&#182;</a></h2>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre>
+</pre></div>
+
+</div>
+</div>
+
+</div>
 </div>
 </div>
 
