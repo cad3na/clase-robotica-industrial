@@ -2314,12 +2314,35 @@ ExFpAJM5EZEGMJkTEWnA/wOfMrDiyKdPqwAAAABJRU5ErkJggg==
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Y si elevamos la velocidad al cuadrado, obtendremos:</p>
-<p><span class="math">\(v_1^2 = \frac{l_1^2}{4} \dot{q_1}^2\)</span></p>
 <p><span class="math">\[
-    v_2^2 =
-        \left[ l_1^2 + l_1 l_2 \cos{q_2} + \frac{l_2^2}{4} \right] \dot{q_1}^2
+\begin{multline}
+    v_1^2
+    = \left( - \frac{l_1}{2} \dot{q_1} \sin{q_1} \right)^2 + \left( \frac{l_1}{2} \dot{q_1} \cos{q_1} \right)^2
+    = \left( - \frac{l_1}{2} \dot{q_1} \right)^2 \left( \sin^2{q_1} + \cos^2{q_1} \right)
+    = \frac{l_1^2}{4} \dot{q_1}^2
+\end{multline}
+\]</span></p>
+<p><span class="math">\[
+\begin{multline}
+    v_2^2
+        = \left( - l_1 \dot{q_1} \sin{q_1} - \frac{l_2}{2} (\dot{q_1} + \dot{q_2}) \sin{(q_1 + q_2)} \right)^2
+        + \left( l_1 \dot{q_1} \cos{q_1} + \frac{l_2}{2} (\dot{q_1} + \dot{q_2}) \cos{(q_1 + q_2)} \right)^2 \\
+        = l_1^2 \dot{q_1}^2 \sin^2{q_1} + l_1 l_2 \dot{q_1} \left( \dot{q_1} + \dot{q_2} \right) \sin{q_1} \sin{(q_1 + q_2)}
+        + \frac{l_2^2}{4} \left( \dot{q_1} + \dot{q_2} \right)^2 \sin^2{(q_1 + q_2)} \\
+        + l_1^2 \dot{q_1}^2 \cos^2{q_1} + l_1 l_2 \dot{q_1} \left( \dot{q_1} + \dot{q_2} \right) \cos{q_1} \cos{(q_1 + q_2)}
+        + \frac{l_2^2}{4} \left( \dot{q_1} + \dot{q_2} \right)^2 \cos^2{(q_1 + q_2)} \\
+        = l_1 \dot{q_1}^2 + \frac{l_2^2}{4} \left( \dot{q_1} + \dot{q_2} \right)^2 
+        + l_1 l_2 \dot{q_1} \left( \dot{q_1} + \dot{q_2} \right)
+        \left( \sin{q_1} \sin{(q_1 + q_2)} + \cos{q_2} \cos{(q_1 + q_2)} \right) \\
+        = l_1 \dot{q_1}^2 + \frac{l_2^2}{4} \left( \dot{q_1} + \dot{q_2} \right)^2 
+        + l_1 l_2 \dot{q_1} \left( \dot{q_1} + \dot{q_2} \right)
+        \left( \sin^2{q_1}\cos{q_2} + \sin{q_1}\cos{q_1}\sin{q_2} + \cos^2{q_1} \cos{q_2} - \sin{q_1}\cos{q_1}\sin{q_2} \right) \\
+        = l_1 \dot{q_1}^2 + \frac{l_2^2}{4} \left( \dot{q_1} + \dot{q_2} \right)^2 
+        + l_1 l_2 \dot{q_1} \left( \dot{q_1} + \dot{q_2} \right) \cos{q_2} \\
+        = \left[ l_1^2 + l_1 l_2 \cos{q_2} + \frac{l_2^2}{4} \right] \dot{q_1}^2
         + \left[ l_1 l_2 + \frac{l_2^2}{4} \right] \dot{q_1} \dot{q_2}
         + \frac{l_2^2}{4} \dot{q_2}^2
+\end{multline}
 \]</span></p>
 </div></section>
     </section><section>
