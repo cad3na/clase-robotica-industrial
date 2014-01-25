@@ -5,7 +5,7 @@ Repositorio con los ejemplos vistos en la clase de Robótica Industrial.
 
 Las prácticas de la clase requieren que se tenga instalado el ambiente de desarrollo de IPython.
 
-La manera mas fácil de instalarlo es por medio de la distribución para desarrollo cientifico Anaconda, distribuida libremente en la siguiente página.
+La manera mas fácil de instalarlo es por medio de la distribución para desarrollo cientifico Anaconda, distribuida libremente en la siguiente [página](https://store.continuum.io/cshop/anaconda/).
 
 ## Instalación
 
