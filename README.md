@@ -19,7 +19,7 @@ El instalador creará accesos directos para las aplicaciones de IPython QT-Conso
 
 Asegurate de guardar tus prácticas en un solo lugar para facil acceso, como por ejemplo:
 
-    C:\Practicas-Robotica-Insutrial
+    C:\Practicas-Robotica-Industrial
 
 Cuando tengas este directorio en tu sistema abre la aplicacion cmd.exe (en windows 7 es tan simple como apretar la tecla con un simbolo de Windows y escribir '''cmd''' seguido de la tecla Enter), una vez que tengas abierto el simbolo del sistema (nombre raro para una aplicación, lo se) escribe:
 
